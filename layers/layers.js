@@ -12,27 +12,27 @@ var wms_layers = [];
                 url: 'https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}'
             })
         });
-var format_readoPortoOrganizadodeItaqui_1 = new ol.format.GeoJSON();
-var features_readoPortoOrganizadodeItaqui_1 = format_readoPortoOrganizadodeItaqui_1.readFeatures(json_readoPortoOrganizadodeItaqui_1, 
+var format_readoportoorganizadodeItaqui_1 = new ol.format.GeoJSON();
+var features_readoportoorganizadodeItaqui_1 = format_readoportoorganizadodeItaqui_1.readFeatures(json_readoportoorganizadodeItaqui_1, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_readoPortoOrganizadodeItaqui_1 = new ol.source.Vector({
+var jsonSource_readoportoorganizadodeItaqui_1 = new ol.source.Vector({
     attributions: ' ',
 });
-jsonSource_readoPortoOrganizadodeItaqui_1.addFeatures(features_readoPortoOrganizadodeItaqui_1);
-var lyr_readoPortoOrganizadodeItaqui_1 = new ol.layer.Vector({
+jsonSource_readoportoorganizadodeItaqui_1.addFeatures(features_readoportoorganizadodeItaqui_1);
+var lyr_readoportoorganizadodeItaqui_1 = new ol.layer.Vector({
                 declutter: false,
-                source:jsonSource_readoPortoOrganizadodeItaqui_1, 
-                style: style_readoPortoOrganizadodeItaqui_1,
-                popuplayertitle: "Área do Porto Organizado de Itaqui",
-                interactive: false,
-                title: '<img src="styles/legend/readoPortoOrganizadodeItaqui_1.png" /> Área do Porto Organizado de Itaqui'
+                source:jsonSource_readoportoorganizadodeItaqui_1, 
+                style: style_readoportoorganizadodeItaqui_1,
+                popuplayertitle: "Área do porto organizado de Itaqui",
+                interactive: true,
+                title: '<img src="styles/legend/readoportoorganizadodeItaqui_1.png" /> Área do porto organizado de Itaqui'
             });
 
-lyr_GoogleSatellite_0.setVisible(true);lyr_readoPortoOrganizadodeItaqui_1.setVisible(true);
-var layersList = [lyr_GoogleSatellite_0,lyr_readoPortoOrganizadodeItaqui_1];
-lyr_readoPortoOrganizadodeItaqui_1.set('fieldAliases', {'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'Área': 'Área', });
-lyr_readoPortoOrganizadodeItaqui_1.set('fieldImages', {'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'Área': 'TextEdit', });
-lyr_readoPortoOrganizadodeItaqui_1.set('fieldLabels', {'Name': 'no label', 'description': 'no label', 'timestamp': 'no label', 'begin': 'no label', 'end': 'no label', 'altitudeMode': 'no label', 'tessellate': 'no label', 'extrude': 'no label', 'visibility': 'no label', 'drawOrder': 'no label', 'icon': 'no label', 'Área': 'no label', });
-lyr_readoPortoOrganizadodeItaqui_1.on('precompose', function(evt) {
+lyr_GoogleSatellite_0.setVisible(true);lyr_readoportoorganizadodeItaqui_1.setVisible(true);
+var layersList = [lyr_GoogleSatellite_0,lyr_readoportoorganizadodeItaqui_1];
+lyr_readoportoorganizadodeItaqui_1.set('fieldAliases', {'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', });
+lyr_readoportoorganizadodeItaqui_1.set('fieldImages', {'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', });
+lyr_readoportoorganizadodeItaqui_1.set('fieldLabels', {'Name': 'inline label - always visible', 'description': 'hidden field', 'timestamp': 'hidden field', 'begin': 'hidden field', 'end': 'hidden field', 'altitudeMode': 'hidden field', 'tessellate': 'hidden field', 'extrude': 'hidden field', 'visibility': 'hidden field', 'drawOrder': 'hidden field', 'icon': 'hidden field', });
+lyr_readoportoorganizadodeItaqui_1.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
