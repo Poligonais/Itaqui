@@ -5,14 +5,14 @@ var map = new ol.Map({
     layers: layersList,
     view: new ol.View({
          maxZoom: 28, minZoom: 1, projection: new ol.proj.Projection({
-            code: 'EPSG:4326',
-            //extent: [-44.379639, -2.619306, -44.357111, -2.561611],
-            units: 'degrees'})
+            code: 'EPSG:31982',
+            //extent: [-20026376.390000, -20048966.100000, 20026376.390000, 20048966.100000],
+            units: 'm'})
     })
 });
 
 //initial view - epsg:3857 coordinates if not "Match project CRS"
-map.getView().fit([-44.412672, -2.620484, -44.299068, -2.559905], map.getSize());
+map.getView().fit([744013.138720, 7172536.923498, 754990.551503, 7178592.928707], map.getSize());
 
 //full zooms only
 map.getView().setProperties({constrainResolution: true});
@@ -501,7 +501,7 @@ var Title = new ol.control.Control({
     element: (() => {
         var titleElement = document.createElement('div');
         titleElement.className = 'top-right-title ol-control';
-        titleElement.innerHTML = '<h2 class="project-title">Poligonal da Área do Porto Organizado de Itaqui</h2>';
+        titleElement.innerHTML = '<h2 class="project-title">Zoneamento do PDZ do Porto de Paranaguá</h2>';
         return titleElement;
     })(),
     target: 'top-right-container'
@@ -518,7 +518,7 @@ var Abstract = new ol.control.Control({
 
         var linkElement = document.createElement('a');
 
-        if (211 > 240) {
+        if (167 > 240) {
             linkElement.setAttribute("onmouseenter", "showAbstract()");
             linkElement.setAttribute("onmouseleave", "hideAbstract()");
             linkElement.innerHTML = 'i';
@@ -532,13 +532,13 @@ var Abstract = new ol.control.Control({
             window.showAbstract = function() {
                 linkElement.classList.remove("project-abstract");
                 linkElement.classList.add("project-abstract-uncollapsed");
-                linkElement.innerHTML = 'As camadas são apresentadas de acordo com os atos normativos que fixam, por decreto ou portaria, os limites das áreas dos portos organizados.<br /><br />Documento oficial publicado em:<br />https://bit.ly/poligonais_publicadas';
+                linkElement.innerHTML = 'As camadas estão reunidas de acordo com os horizontes de planejamento (curto, médio e longo prazo). <br /> <br />Documento oficial publicado em: <br />https://bit.ly/pdzs_publicados ';
             }
 
             hideAbstract();
         } else {
             linkElement.classList.add("project-abstract-uncollapsed");
-            linkElement.innerHTML = 'As camadas são apresentadas de acordo com os atos normativos que fixam, por decreto ou portaria, os limites das áreas dos portos organizados.<br /><br />Documento oficial publicado em:<br />https://bit.ly/poligonais_publicadas';
+            linkElement.innerHTML = 'As camadas estão reunidas de acordo com os horizontes de planejamento (curto, médio e longo prazo). <br /> <br />Documento oficial publicado em: <br />https://bit.ly/pdzs_publicados ';
         }
 
         titleElement.appendChild(linkElement);
@@ -981,18 +981,6 @@ let measuring = false;
 
 //layer search
 
-var searchLayer = new SearchLayer({
-    layer: lyr_readoportoorganizadodeItaqui_1,
-    colName: 'Name',
-    zoom: 10,
-    collapsed: true,
-    map: map,
-    maxResults: 10,
-});
-map.addControl(searchLayer);
-document.getElementsByClassName('search-layer')[0].getElementsByTagName('button')[0].className += ' fa fa-binoculars';
-document.getElementsByClassName('search-layer-input-search')[0].placeholder = 'Search feature ...';
-    
 
 //scalebar
 
